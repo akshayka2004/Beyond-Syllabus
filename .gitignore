@@ -1,0 +1,12 @@
+node_modules/
+.turbo/
+
+# Turborepo
+.turbo
+.vercel
+.gstack/
+universities/
+.env.local
+.env
+.claude/
+.next/
