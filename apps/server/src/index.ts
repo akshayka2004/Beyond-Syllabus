@@ -77,11 +77,7 @@ const app = new Elysia({ adapter: node() })
   })
 
   .get("/", () => "OK")
-  .post("/", ({ body }) => body, {
-    body: t.Object({
-      name: t.String(),
-    }),
-  })
+
   .get("/syllabus", async () => {
     const content = await fs.readFile(
       path.join(process.cwd(), "src/routes/syllabus/generated/university.json"),
