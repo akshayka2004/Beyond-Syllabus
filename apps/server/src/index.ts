@@ -5,11 +5,11 @@ import { OpenAPIReferencePlugin } from "@orpc/openapi/plugins";
 import { ZodToJsonSchemaConverter } from "@orpc/zod/zod4";
 import { RPCHandler } from "@orpc/server/fetch";
 import { onError } from "@orpc/server";
-import { appRouter } from "./routes";
-import { createContext } from "./lib/context";
+import { appRouter } from "./routes/index.js";
+import { createContext } from "./lib/context.js";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { env } from "./config/env";
+import { env } from "./config/env.js";
 import serverTiming from "@elysiajs/server-timing";
 import { logger } from "@chneau/elysia-logger";
 

@@ -1,7 +1,7 @@
 import { Redis } from "@upstash/redis";
 import { ORPCError } from "@orpc/client";
-import { publicProcedure } from "../../lib/orpc";
-import { env } from "../../config/env";
+import { publicProcedure } from "../../lib/orpc.js";
+import { env } from "../../config/env.js";
 import { randomBytes } from "node:crypto";
 
 function generateToken(length = 6): string {

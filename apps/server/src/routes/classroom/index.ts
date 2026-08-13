@@ -1,8 +1,8 @@
 import { Redis } from "@upstash/redis";
 import { ORPCError } from "@orpc/client";
 import { randomBytes } from "node:crypto";
-import { publicProcedure } from "../../lib/orpc";
-import { env } from "../../config/env";
+import { publicProcedure } from "../../lib/orpc.js";
+import { env } from "../../config/env.js";
 
 /**
  * Classrooms: the flipped classroom's teacher half.

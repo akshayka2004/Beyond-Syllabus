@@ -1,9 +1,10 @@
-import { publicProcedure } from "../lib/orpc";
+import { publicProcedure } from "../lib/orpc.js";
 import type { RouterClient } from "@orpc/server";
 import path from "node:path";
 import fs from "node:fs/promises";
-import { shareRoutes } from "./share";
-import { classroomRoutes } from "./classroom";
+import { shareRoutes } from "./share/index.js";
+import { classroomRoutes } from "./classroom/index.js";
+
 
 // Parse the syllabus dataset once per process instead of on every request.
 let syllabusCache: Record<string, unknown> | null = null;
