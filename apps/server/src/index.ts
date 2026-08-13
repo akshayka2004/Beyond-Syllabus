@@ -11,7 +11,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { env } from "./config/env.js";
 import serverTiming from "@elysiajs/server-timing";
-import { logger } from "@chneau/elysia-logger";
+
 
 
 import { node } from "@elysiajs/node";
@@ -56,7 +56,7 @@ const app = new Elysia({ adapter: node() })
     })
   )
   .use(serverTiming())
-  .use(logger())
+
 
   .options("/rpc*", () => new Response(null, { status: 204 }))
 
