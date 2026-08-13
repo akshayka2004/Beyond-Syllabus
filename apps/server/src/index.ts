@@ -7,12 +7,14 @@ import { RPCHandler } from "@orpc/server/fetch";
 import { onError } from "@orpc/server";
 import { appRouter } from "./routes";
 import { createContext } from "./lib/context";
-import { file } from "bun";
+import fs from "node:fs/promises";
 import path from "node:path";
 import { env } from "./config/env";
 import serverTiming from "@elysiajs/server-timing";
 import { logger } from "@chneau/elysia-logger";
 
+
+import { node } from "@elysiajs/node";
 
 const rpcHandler = new RPCHandler(appRouter, {
   interceptors: [
@@ -44,7 +46,7 @@ const allowedOrigins: (string | RegExp)[] = [
   /^https:\/\/beyond-syllabus-[a-z0-9]+-deepusnaths-projects\.vercel\.app$/,
 ];
 
-const app = new Elysia()
+const app = new Elysia({ adapter: node() })
   .use(
     cors({
       origin: allowedOrigins,
@@ -81,9 +83,11 @@ const app = new Elysia()
     }),
   })
   .get("/syllabus", async () => {
-    return await file(
-      path.join(process.cwd(), "src/routes/syllabus/generated/university.json")
-    ).json();
+    const content = await fs.readFile(
+      path.join(process.cwd(), "src/routes/syllabus/generated/university.json"),
+      "utf-8"
+    );
+    return JSON.parse(content);
   })
   .listen(port, () => {
     console.log("🦊 Beyond Syllabus API is running !!");

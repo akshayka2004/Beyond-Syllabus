@@ -312,9 +312,12 @@
 /* manifesto */
 .bs-manifesto { padding: 48px 0 0; }
 .bs-manifesto h2 { font-size: clamp(24px, 3.2vw, 38px); line-height: 1.22; text-align: center; max-width: 620px; margin: 0 auto 36px; }
-.bs-mrow { display: grid; grid-template-columns: 60px 1fr 1.6fr; align-items: start; gap: 20px; padding: 28px 32px; border-bottom: 1px solid hsl(var(--border)); }
+.bs-mrow { display: grid; grid-template-columns: 60px 1fr 1.6fr; align-items: start; gap: 20px; padding: 28px 32px; border-bottom: 1px solid hsl(var(--border)); transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.bs-mrow:hover { background-color: hsl(var(--card)); border-radius: 6px; border-bottom-color: transparent; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
 .bs-mrow:last-child { border-bottom: 0; }
-.bs-mrow--featured { background: hsl(var(--card)); border-bottom-color: transparent; border-radius: 6px; }
+.bs-mrow--featured { background: hsl(var(--primary)); border-bottom-color: transparent; border-radius: 6px; box-shadow: 4px 4px 0 hsl(var(--primary) / 0.32); }
+.bs-mrow--featured .bs-mnum, .bs-mrow--featured .bs-mtitle, .bs-mrow--featured .bs-mbody { color: hsl(var(--primary-foreground)); }
+.bs-mrow--featured:hover { background-color: hsl(var(--primary)); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 hsl(var(--primary) / 0.32); }
 .bs-mnum, .bs-mtitle { font-family: var(--font-display); color: hsl(var(--accent)); font-weight: 500; font-size: 20px; }
 .bs-mbody { font-size: 15px; line-height: 1.75; color: hsl(var(--muted-foreground)); }
 
@@ -324,9 +327,12 @@
 .bs-how .bs-sub { font-size: 13.5px; color: hsl(var(--muted-foreground)); margin-top: 6px; }
 .bs-steps { display: flex; align-items: flex-end; gap: 16px; margin-top: 32px; }
 .bs-step { position: relative; flex: 1 1 0; min-width: 0; }
-.bs-step::before { content: ""; position: absolute; inset: 0; border: 1.4px solid hsl(var(--ink)); border-radius: 2px; transform: translate(6px, 6px); }
-.bs-step-inner { position: relative; background: hsl(var(--background)); border: 1.4px solid hsl(var(--ink)); border-radius: 2px; padding: 22px 14px 18px; min-height: 170px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
-.bs-step-icon { color: hsl(var(--ink)); flex: none; }
+.bs-step::before { content: ""; position: absolute; inset: 0; border: 1.4px solid hsl(var(--ink)); border-radius: 2px; transform: translate(6px, 6px); transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease; }
+.bs-step-inner { position: relative; background: hsl(var(--background)); border: 1.4px solid hsl(var(--ink)); border-radius: 2px; padding: 22px 14px 18px; min-height: 170px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
+.bs-step-icon { color: hsl(var(--ink)); flex: none; transition: color 0.2s ease; }
+.bs-step:hover::before { border-color: hsl(var(--primary)); background: hsl(var(--primary)); transform: translate(4px, 4px); }
+.bs-step:hover .bs-step-inner { background: hsl(var(--card)); border-color: hsl(var(--primary)); color: hsl(var(--primary)); transform: translate(-2px, -2px); }
+.bs-step:hover .bs-step-icon { color: hsl(var(--primary)); }
 .bs-step-label { font-family: var(--font-display); font-size: 13px; font-weight: 400; line-height: 1.35; }
 .bs-step-go { margin-top: auto; width: 24px; height: 24px; border-radius: 50%; border: 1.2px solid hsl(var(--primary)); color: hsl(var(--primary)); display: grid; place-items: center; transition: background-color .18s ease, color .18s ease; }
 .bs-step-go:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
@@ -349,7 +355,8 @@
 .bs-ask { padding: 48px 0 0; }
 .bs-ask h2 { text-align: center; font-size: clamp(22px, 2.8vw, 30px); letter-spacing: .02em; margin-bottom: 28px; }
 .bs-ask-list { display: flex; flex-direction: column; gap: 14px; }
-.bs-ask-row { background: hsl(var(--card)); display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; padding: 28px 36px; align-items: center; border-radius: 6px; }
+.bs-ask-row { background: hsl(var(--card)); display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; padding: 28px 36px; align-items: center; border-radius: 6px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.bs-ask-row:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); }
 .bs-ask-row h3 { font-size: 18px; font-weight: 500; font-family: var(--font-display); }
 .bs-ask-row p { font-size: 14px; line-height: 1.7; color: hsl(var(--muted-foreground)); }
 

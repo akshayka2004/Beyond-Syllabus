@@ -12,7 +12,6 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.2.2",
     "@orpc/client": "^1.8.9",
     "@orpc/tanstack-query": "^1.8.9",
     "@radix-ui/react-accordion": "^1.2.12",
@@ -29,7 +28,6 @@
     "@tanstack/react-query": "^5.84.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
     "dotenv": "^16.5.0",
     "framer-motion": "^11.18.2",
     "groq-sdk": "^0.30.0",
@@ -41,16 +39,12 @@
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.66.0",
     "react-hot-toast": "^2.6.0",
-    "react-icons": "^5.5.0",
     "react-spinners": "^0.17.0",
-    "reactflow": "^11.11.4",
     "remark-math": "^6.0.0",
-    "shiki": "^3.7.0",
     "streamdown": "^1.4.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
-    "unpdf": "^1.8.0",
-    "zod": "^4.1.12"
+    "unpdf": "^1.8.0"
   },
   "devDependencies": {
     "@types/node": "^20",

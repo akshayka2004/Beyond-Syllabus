@@ -17,7 +17,9 @@
     "start:server": "turbo -F server start",
     "test": "turbo test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.52"
+  },
   "devDependencies": {
     "oxlint": "^1.8.0",
     "turbo": "^2.5.4"

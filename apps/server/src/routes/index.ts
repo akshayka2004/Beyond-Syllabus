@@ -1,7 +1,7 @@
 import { publicProcedure } from "../lib/orpc";
 import type { RouterClient } from "@orpc/server";
 import path from "node:path";
-import { file } from "bun";
+import fs from "node:fs/promises";
 import { shareRoutes } from "./share";
 import { classroomRoutes } from "./classroom";
 
@@ -10,9 +10,11 @@ let syllabusCache: Record<string, unknown> | null = null;
 
 async function loadSyllabus(): Promise<Record<string, unknown>> {
   if (!syllabusCache) {
-    syllabusCache = await file(
-      path.join(process.cwd(), "src/routes/syllabus/syllabus.json")
-    ).json();
+    const content = await fs.readFile(
+      path.join(process.cwd(), "src/routes/syllabus/syllabus.json"),
+      "utf-8"
+    );
+    syllabusCache = JSON.parse(content);
   }
   return syllabusCache as Record<string, unknown>;
 }
