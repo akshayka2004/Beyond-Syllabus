@@ -20,7 +20,6 @@ const MANIFESTO = [
     n: "1",
     title: "We Refuse.",
     body: "To be part of a world where curiosity is restricted, ideas are ignored, and people are forced to fit into structures instead of being empowered to transform them. Because humanity was never meant to create copies. It was meant to create creators.",
-    featured: true,
   },
   {
     n: "2",
